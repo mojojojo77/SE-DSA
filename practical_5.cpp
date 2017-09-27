@@ -54,7 +54,3 @@ struct appointment{
 	
 };
 
-
-int main(){
-	return 0;
-}

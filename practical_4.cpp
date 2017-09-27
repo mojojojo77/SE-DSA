@@ -1,6 +1,4 @@
 /*
-Coded by Arnav Saraf
-
 C++ Program for string operations
 1. Copy
 2. Concatanate
@@ -10,9 +8,7 @@ C++ Program for string operations
 */
 
 #include<iostream>
-using std::cout;
-using std::endl;
-using std::cin;
+using namespace std;
 
 // Character string array declared
 // Two strings are declared which we will be working on. 
@@ -60,6 +56,7 @@ void str_concat(){
 	}
 	cout<<"String two concatanated with string one/-"<<endl;
 }
+
 int str_length(char str_one[20]){
 	int length = 0;
 	for(int i=0; str_one[i] != '\0'; i++){
@@ -67,6 +64,7 @@ int str_length(char str_one[20]){
 	}
 	return length;
 }
+
 void str_compare(){
 	if(str_length(str_one) == str_length(str_two)){
 		for(int i=0; i<str_length(str_one); i++){
