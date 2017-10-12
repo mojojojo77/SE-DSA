@@ -19,7 +19,7 @@ class StudentDatabase{
 		StudentDatabase();		
 };
 
-// Classs which stores the students marks and prints the personal details from the above class.	
+// Class which stores the student's marks and prints the personal details from the above class.	
 class AccessDatabase{
 	private:
 		float* marks_physics, *marks_chemistry, *marks_mathematics;
@@ -74,9 +74,9 @@ void AccessDatabase::displayDatabase(StudentDatabase& stdb){
 	cout<<setw(30)<<"Driving License:"<<stdb.drivingLicenseNumber<<endl;
 	cout<<setw(30)<<"Pincode: "<<StudentDatabase::pincode<<endl;
 	
-	cout<<setw(30)<<"Marks in physics: "<< *marks_physics<<endl;
-	cout<<setw(30)<<"Marks in Chemistry: "<< *marks_chemistry<<endl;
-	cout<<setw(30)<<"Marks in Mathematics: "<< *marks_mathematics<<endl;
+	cout<<setw(30)<<"Marks in physics: "<< *this->marks_physics<<endl;
+	cout<<setw(30)<<"Marks in Chemistry: "<< *this->marks_chemistry<<endl;
+	cout<<setw(30)<<"Marks in Mathematics: "<< *this->marks_mathematics<<endl;
 }
 
 

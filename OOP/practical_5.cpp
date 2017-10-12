@@ -1,56 +1,90 @@
-<<<<<<< HEAD
-/*			PROBLEM DEFINITION
-Write C++ program for storing appointment schedule for day. Appointments are booked
-randomly using linked list. Set start and end time and min and max duration for visit slot.
-Write functions for-
-a) Display free slots
-b) Book appointment
-c) Cancel appointment ( check validity, time bounds, availability etc)
-d) Sort list based on time
-e) Sort list based on time using pointer manipulation
+/*
+Create employee bio-data using following classes 
+i)   Personal record 
+ii)  Professional record 
+iii) Academic record Assume appropriate data members and member function to accept required data & print bio-data. Create bio-data using multiple inheritance using C++.
 */
 
-
-// Time slots will be based on hours and minutes in 24 hours format
-// Working hours are between 7 to 17 hours (7AM - 5PM)
-// 60 Minutes margin will have to be set. Otherwise it will count till 100.
-// Minimum and Maximum time for an appointment has to be between 30 minutes to 2 hours
-
-
-// Time Will be represented using array.
-// Appointments will be represented using linked list.
-
 #include<iostream>
-#include<string>
+using namespace std;
 
-// i'th index represents hour
-// 0 = 7 and 10 = 17
-// j'th index represents minutes 
-
-// If and index is set to char 'A' it means it is available. 'B' represents Booked.
-char time[10][60]; 
-
-void free_all_slots(){
-	for(int i=0; i<10; i++){
-		for(int j=0; j<60; j++){
-			time[i][j]='A';
-		}
-	}
-}
-
-// Appointments will be set randomly using linked list with struct
-struct appointment{
-
-	
-	
-	string name;
-	string purpose;
-	
-
-	int starting_point_h;
-	int starting_point_m;
-	
-	int ending_point_h;
-	int eding_point_m;
-	
+// This class will store employees personal record. 
+// name, age, gender, contact_no
+class Personal_record{
+	protected:
+		string name;
+		short age;
+		char gender;
+		string contact;	
 };
+
+// This class will store employees professional record
+// experience, salary 
+class Professional_record{
+	protected:
+		short experience;
+		int salary;
+};
+
+// This class will store employees academic record
+// degree, year of graduation, grade
+class Academic_record{
+	protected:
+		string degree;
+		short grd_year;
+		char grade;
+};
+
+class Bio_data:private Personal_record, private Professional_record, private Academic_record{
+	public:
+		void set_record(){
+			// Personal Record
+			cout<<"Personal Record: \n";
+			cout<<"Enter Name: ";
+			cin>>name;
+			cout<<"Enter Age: ";
+			cin>>age;
+			cout<<"Enter Gender: ";
+			cin>>gender;
+			cout<<"Enter Contact Info: ";
+			cin>>contact;	
+			
+			// Professional Record
+			
+			cout<<"Enter Years of experience: ";
+			cin>>experience;
+			cout<<"Enter Salary: ";
+			cin>>salary;
+			
+			// Academic Record
+			cout<<"Enter Degree: ";
+			cin>>degree;
+			cout<<"Enter Graduation Year: ";
+			cin>>grd_year;
+			cout<<"Enter Grade: ";
+			cin>>grade;
+		}
+		void get_record(){
+			// Printing Record
+			cout<<"Printing Record for "<<name;
+			cout<<"\n Employees Age: "<<age<<"\n Employees Gender: "<<gender<<"\n Employees Contact Info: "<<contact<<"\n Employees Years of Experience: "<<experience<<"\n Employees Salary: "<<salary<<"\n Employees Degree: "<<degree<<"\n Employees Graduation Year: "<<grd_year<<"\n Employees Grade: "<<grade<<endl;
+		}
+};
+
+int main(){
+	int n;
+	cout<<"Enter data for how many employees: ";
+	cin>>n;
+	
+	Bio_data* bio = new Bio_data[n];
+	for(auto i=0; i<n; i++){
+		bio[i].set_record();
+	}
+	
+	for(auto i=0; i<n; i++){
+		bio[i].get_record();
+	}
+	
+	delete [] bio;
+	return 0;
+}	

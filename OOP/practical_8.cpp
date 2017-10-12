@@ -1,3 +1,8 @@
+/*
+Write a function template selection Sort. Write a program that inputs, sorts and outputs an
+integer array and a float array.
+*/
+
 #include<iostream>
 #include<iomanip>	//setw() will be used to align the output 
 
@@ -47,3 +52,4 @@ int main(){
 	 
 	return 0;
 }
+

@@ -1,16 +1,10 @@
 #include<iostream>
-#include<cstring>
+
 using namespace std;
 
 int main(){
-	char city[10]="Pune";
-
-	if(strcmp(city, "Pune")&& strcmp(city, "Mumbai") && strcmp(city, "Nashik")){
-		cout<<"Doesnt Matche";
+	int a[] = {1,2,3,4,5};
+	for(auto x:a){
+		cout<<x;
 	}
-	else{
-		cout<<"Mathces";
-	}
-	
-	return 0;
 }
